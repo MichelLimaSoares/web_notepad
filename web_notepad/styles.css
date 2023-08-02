@@ -17,19 +17,19 @@ header{
 }
 .notes-section{
     display: flex;
-    flex-wrap: wrap-reverse;
-    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;    
     padding-top: 10px;
-    margin-bottom: 9vh;
+    margin-bottom: 9px;
 }
 .add-note-article{
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: whitesmoke;
-    width: 40vw;
-    height: 30vh;
+    width: 350px;
+    height: 250px;
     margin: auto;
     border-radius: 15px;
     border: 1px solid black;
@@ -67,7 +67,10 @@ header{
     border-radius: 10px;
     border: 1px solid black;
 }
-
+.all-notes-section{
+    display: flex;
+    flex-wrap: wrap;
+}
 .delete-all-note-button{
     background-color: red;
     color: whitesmoke;
@@ -79,9 +82,9 @@ header{
     flex-direction: column;
     align-items: end;
     background-color: whitesmoke;
-    width: 20vw;
-    height: 30vh;
-    margin: 10px 0 10px 10px;
+    width: 200px;
+    height: 250px;
+    margin: 10px 8px 10px 8px;
     border-radius: 10px;
     border: 1px solid black;
 }
@@ -112,21 +115,51 @@ header{
 .your-note img{
     width: 1.8em;
     height: 1.8em;
-    margin-right: 5px;
+    padding: 1px;
+    margin: 5px;
 }
-footer{
+.footer{
     display: inline-block;
     position: fixed;
     margin-top: 10px;
     bottom: 0;
     height: 8vh;
     width: 100vw;
-    background-color: black;
+    
     margin-bottom: -4px;
+}
+footer{
+    background-color: black;
 }
 .copyRigth{
     text-align: center;
     font-weight: bold;
     color: whitesmoke;
     margin: 15px;
+}
+@media screen and (min-width: 300px) and (max-width: 750px) {
+    body{
+        overflow-x: hidden;
+    }
+    .all-notes-section{
+        display: flex;
+        flex-wrap: wrap; 
+        margin: 5px;        
+    }
+    .container-all-notes-section{
+        grid-template-columns: repeat(2, 35vw);
+        grid-template-rows: repeat(3, 27vw);
+    }
+    .your-note{
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        background-color: whitesmoke;
+        width: 30vw;
+        height: 35vh;
+        margin: 8px 8px 8px 8px;
+        border-radius: 10px;
+        border: 1px solid black;
+        flex-grow: 2;
+    }
 }

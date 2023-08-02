@@ -167,13 +167,26 @@ window.addEventListener("load", ()=>{
         }
     }
 });
-deleteAllNote.addEventListener("click", (e)=>{
+// deleteAllNote.addEventListener("click", (e)=>{
+//     let response = confirm("Deseja Excluir TODAS as notas?");
+//     if(response){
+//         localStorage.clear();
+//         for(let j = 0; j < localStorageSize; j++){
+//             const articleClass = document.querySelectorAll(".your-note");
+//             notes.removeChild(articleClass[0]);
+//         }
+//     }
+// });
+deleteAllNote.addEventListener("click", (e) => {
     let response = confirm("Deseja Excluir TODAS as notas?");
-    if(response){
+    if (response) {
         localStorage.clear();
-        for(let j = 0; j < localStorageSize; j++){
-            const articleClass = document.querySelectorAll(".your-note");
-            notes.removeChild(articleClass[0]);
-        }
+        const allNotes = document.querySelectorAll(".your-note");
+        allNotes.forEach((note) => {
+            notes.removeChild(note);
+        });
     }
 });
+
+
+
